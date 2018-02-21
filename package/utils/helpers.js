@@ -1,10 +1,11 @@
-const isObject = value => (
+const isObject = value =>
   typeof value === 'object' &&
   value !== null &&
   (value.length === undefined || value.length === null)
-)
 
-const isEmpty = value => (value === null || value === undefined)
+const isBoolean = str => /^true/.test(str) || /^false/.test(str)
+
+const isEmpty = value => value === null || value === undefined
 
 const isString = key => key && typeof key === 'string'
 
@@ -23,6 +24,7 @@ const prettyPrint = obj => JSON.stringify(obj, null, 2)
 
 module.exports = {
   isObject,
+  isBoolean,
   isArray,
   isEqual,
   isEmpty,

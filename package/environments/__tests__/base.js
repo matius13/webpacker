@@ -8,9 +8,9 @@ const chdirCwd = () => process.chdir(process.cwd())
 chdirApp()
 
 const { resolve } = require('path')
-const rules = require('../rules')
-const { ConfigList } = require('../config_types')
-const Environment = require('../environment')
+const rules = require('../../rules')
+const { ConfigList } = require('../../config_types')
+const Environment = require('../base')
 
 describe('Environment', () => {
   afterAll(chdirCwd)

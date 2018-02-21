@@ -2,6 +2,9 @@ require "active_support/core_ext/module/attribute_accessors"
 require "active_support/logger"
 require "active_support/tagged_logging"
 
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+ENV["NODE_ENV"] ||= ENV["RAILS_ENV"]
+
 module Webpacker
   extend self
 
@@ -19,6 +22,7 @@ module Webpacker
 end
 
 require "webpacker/instance"
+require "webpacker/env"
 require "webpacker/configuration"
 require "webpacker/manifest"
 require "webpacker/compiler"
